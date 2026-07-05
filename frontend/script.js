@@ -14,7 +14,7 @@ async function loginUser() {
     const username = document.querySelector(".login-box input[type='text']").value;
     const password = document.querySelector(".login-box input[type='password']").value;
 
-    const response = await fetch("http://13.126.146.250:5001/login", {
+    const response = await fetch("http://13.207.195.190:5001/login", {
 
         method: "POST",
 
@@ -96,7 +96,7 @@ card.style.display="none";
 
 async function loadMovies() {
 
-    const response = await fetch("http://13.126.146.250:5002/movies");
+    const response = await fetch("http://13.207.195.190:5002/movies");
 
     const movies = await response.json();
 
@@ -149,7 +149,7 @@ async function bookMovie(movieName) {
     }
 
     // Booking Request
-    await fetch("http://13.126.146.250:5003/book", {
+    await fetch("http://13.207.195.190:5003/book", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -161,7 +161,7 @@ async function bookMovie(movieName) {
     });
 
     // Payment Request
-    const payment = await fetch("http://13.126.146.250:5004/pay", {
+    const payment = await fetch("http://13.207.195.190:5004/pay", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
