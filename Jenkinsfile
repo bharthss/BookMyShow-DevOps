@@ -44,9 +44,13 @@ pipeline {
 
         stage('Docker Compose Up') {
             steps {
-                sh 'docker compose up -d'
+                sh '''
+                export DOCKER_BUILDKIT=0
+                export COMPOSE_BAKE=false
+                docker compose up -d
+                '''
             }
-        }
+       }
 
     }
 
