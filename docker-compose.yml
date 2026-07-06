@@ -1,25 +1,25 @@
 services:
 
   auth-service:
-    image: ./auth-service:v1
+    image: auth-service:v1
     container_name: auth-service
     ports:
       - "5001:5001"
 
   movie-service:
-    image: ./movie-service:v1
+    image: movie-service:v1
     container_name: movie-service
     ports:
       - "5002:5002"
 
   booking-service:
-    image: ./booking-service:v1
+    image: booking-service:v1
     container_name: booking-service
     ports:
       - "5003:5003"
 
   payment-service:
-    image: ./payment-service:v1
+    image: payment-service:v1
     container_name: payment-service
     ports:
       - "5004:5004"
