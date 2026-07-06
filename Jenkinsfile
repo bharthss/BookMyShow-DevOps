@@ -4,11 +4,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
 
         stage('Build Auth Service') {
             steps {
@@ -49,7 +44,7 @@ pipeline {
         export COMPOSE_BAKE=false
 
         docker compose down || true
-        docker compose up -d --build
+        docker compose up -d
         '''
     }
 }
