@@ -43,14 +43,16 @@ pipeline {
         }
 
         stage('Docker Compose Up') {
-            steps {
-                sh '''
-                export DOCKER_BUILDKIT=0
-                export COMPOSE_BAKE=false
-                docker compose up -d
-                '''
-            }
-       }
+    steps {
+        sh '''
+        export DOCKER_BUILDKIT=0
+        export COMPOSE_BAKE=false
+
+        docker compose down || true
+        docker compose up -d --build
+        '''
+    }
+}
 
     }
 
